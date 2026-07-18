@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Mahmudul Hasan Sowrov, a Computer Science student and AI enthusiast building practical software and coursework projects.">
+  <meta name="author" content="Mahmudul Hasan Sowrov">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta property="og:title" content="Mahmudul Hasan Sowrov — Portfolio">
+  <meta property="og:description" content="Computer Science student and AI enthusiast building practical software, coursework projects, and collaborative ideas.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mahmudul Hasan Sowrov — Portfolio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mahmudul Hasan Sowrov — Portfolio">
+  <meta name="twitter:description" content="Computer Science student and AI enthusiast building practical software, coursework projects, and collaborative ideas.">
+  <title>Mahmudul Hasan Sowrov — Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f4f1ea;
+      --surface: #faf8f3;
+      --text: #24231f;
+      --muted: #706e66;
+      --line: #d8d3c8;
+      --accent: #245d52;
+      --max-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+      text-underline-offset: 0.24em;
+      transition: color 160ms ease, text-decoration-color 160ms ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent);
+      text-decoration-color: currentColor;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--background) 88%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    main {
+      padding: 92px 0 52px;
+    }
+
+    section {
+      scroll-margin-top: 96px;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro {
+      padding-top: 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin-bottom: 0;
+      font-size: 1.08rem;
+    }
+
+    .project-list,
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-2px);
+      border-color: #aaa398;
+    }
+
+    .project-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-meta {
+      margin-top: 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .project-year {
+      color: var(--muted);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .link-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+    }
+
+    .contact-copy {
+      max-width: 560px;
+      margin-bottom: 24px;
+    }
+
+    .email-link {
+      display: inline-block;
+      padding: 10px 0;
+      font-weight: 700;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-shell {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .nav {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.86rem;
+      }
+
+      main {
+        padding-top: 64px;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+
+      .project-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav page-shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Mahmudul Hasan Sowrov, home">MHS/</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section id="about" class="intro">
+      <!-- EDITABLE: Update your study details and availability here. -->
+      <p class="eyebrow">Computer Science @ AIU ’28 · Open to collaboration</p>
+      <!-- EDITABLE: Update your name here if needed. -->
+      <h1>Mahmudul Hasan Sowrov</h1>
+      <!-- EDITABLE: Update your short professional bio here. -->
+      <p class="lead">
+        I’m a Computer Science student and AI enthusiast exploring how software can turn ideas into useful, practical experiences. I’m building my foundation through programming, collaborative projects, and hands-on experimentation.
+      </p>
+    </section>
+
+    <section id="projects">
+      <p class="eyebrow">Selected work</p>
+      <h2>Projects</h2>
+      <!-- EDITABLE: Duplicate or update project-item blocks to manage your projects. -->
+      <ul class="project-list">
+        <li class="project-item">
+          <div>
+            <h3><a href="https://github.com/sowrovx/CS-Semester-2" target="_blank" rel="noopener noreferrer">CS Semester 2 ↗</a></h3>
+            <p>Second-semester work featuring an AI group project and the blueprint for Chef Koko, a collaborative game concept.</p>
+            <div class="project-meta">AI · Group project · Game design</div>
+          </div>
+          <span class="project-year">2026</span>
+        </li>
+        <li class="project-item">
+          <div>
+            <h3><a href="https://github.com/sowrovx/CS-Semester-1" target="_blank" rel="noopener noreferrer">CS Semester 1 ↗</a></h3>
+            <p>A collection of Computer Science coursework covering C programming labs, practical projects, and written reports.</p>
+            <div class="project-meta">C · Programming labs · Coursework</div>
+          </div>
+          <span class="project-year">2026</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="links">
+      <p class="eyebrow">Around the web</p>
+      <h2>Links</h2>
+      <!-- EDITABLE: Update your social profile URLs here. -->
+      <ul class="link-list">
+        <li><a href="https://www.linkedin.com/in/mahmudul-hasan-sowrov-85850b239" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/sowrovx" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        <li><a href="https://x.com/sowrovx" target="_blank" rel="noopener noreferrer">X ↗</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <p class="eyebrow">Say hello</p>
+      <h2>Contact</h2>
+      <p class="contact-copy">
+        Have an opportunity, project, or interesting idea? I’m always glad to connect, learn, and explore thoughtful collaborations.
+      </p>
+      <!-- EDITABLE: Update your public contact email here. -->
+      <a class="email-link" href="mailto:sowrovx2@gmail.com">sowrovx2@gmail.com ↗</a>
+    </section>
+  </main>
+
+  <footer class="page-shell">
+    <span>© 2026 Mahmudul Hasan Sowrov</span>
+    <span>Designed and built with care.</span>
+  </footer>
+</body>
+</html>
